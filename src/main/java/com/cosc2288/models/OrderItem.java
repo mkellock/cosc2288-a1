@@ -10,10 +10,12 @@ package com.cosc2288.models;
  * © 2022 Matthew Kellock
  */
 
+ import java.util.ArrayList;
+
 public class OrderItem {
     private final Restaurant restaurant;
     private final RestaurantMenuItem restaurantMenuItem;
-    private final Integer quantity;
+    private Integer quantity;
 
     public OrderItem(
         Restaurant restaurant,
@@ -34,5 +36,9 @@ public class OrderItem {
 
     public Integer getQuantity() {
         return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 }

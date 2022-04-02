@@ -8,6 +8,7 @@ import com.cosc2288.models.Restaurant.Category;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import java.util.ArrayList;
 
 class OrderTests {
     private static final String NAME = "Some Restaurant Name";
@@ -46,14 +47,25 @@ class OrderTests {
     }
 
     @Test
-    void shouldConstructAndSetPlusGetOrderItemValues() {
+    void shouldConstructAndSetPlusGetOrderValues() {
         // New instance of an order
         Order order = new Order();
 
-        // Set order items
-        order.setOrderItems(ORDER_ITEMS);
+        // Add an order item
+        order.addOrderItem(ORDER_ITEM_1);
+        order.addOrderItem(ORDER_ITEM_2);
+        order.addOrderItem(ORDER_ITEM_3);
 
         // Check that the order items match
-        Assertions.assertEquals(ORDER_ITEMS, order.getOrderItems());
+        Assertions.assertEquals(3, order.getOrderItems().size());
+        Assertions.assertTrue(order.getOrderItems().contains(ORDER_ITEM_1));
+        Assertions.assertTrue(order.getOrderItems().contains(ORDER_ITEM_2));
+        Assertions.assertTrue(order.getOrderItems().contains(ORDER_ITEM_3));
+
+        // Check that the restaurant matches
+        Assertions.assertEquals(
+            Arrays.asList(RESTAURANT),
+            order.getResturants()
+        );
     }
 }

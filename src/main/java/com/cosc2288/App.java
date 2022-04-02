@@ -18,6 +18,8 @@ import com.cosc2288.models.Discounts;
 import com.cosc2288.models.FileConfig;
 import com.cosc2288.models.Menu;
 import com.cosc2288.models.MenuItem;
+import com.cosc2288.models.Order;
+import com.cosc2288.models.OrderItem;
 import com.cosc2288.models.Restaurant;
 import com.cosc2288.models.Restaurants;
 import com.cosc2288.views.MenuView;
@@ -26,7 +28,9 @@ import com.cosc2288.views.RestaurantMenuView;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public final class App {
@@ -43,13 +47,14 @@ public final class App {
     private static RestaurantsController restaurantsController =
         new RestaurantsController(restaurants);
     private static final Scanner scanner = new Scanner(System.in);
+    private static final Order order = new Order();
 
     private App() {
 
     }
 
     /**
-     * Says hello to the world.
+     * The main Melbourne Eats app :)
      *
      * @param args The arguments of the program.
      */
@@ -152,15 +157,30 @@ public final class App {
 
                     // If we have selected a restaurant
                     if (restaurantSelection != null) {
-                        RestaurantMenuItemView.restaurantMenuItemSelection(
-                            scanner,
-                            restaurantSelection,
-                            BORDER);
+                        OrderItem orderItem;
+
+                        // Keep prompting for order items until the user exits
+                        do {
+                            // Prompt for an order item
+                            orderItem = 
+                                RestaurantMenuItemView.
+                                    restaurantMenuItemSelection(
+                                        scanner,
+                                        restaurantSelection,
+                                        BORDER
+                                    );
+                            
+                            // If the user has selected an order item
+                            if (orderItem != null) {  
+                                // Add the order item
+                                order.addOrderItem(orderItem);
+                            }
+                        } while (orderItem != null);
                     }
 
                     break;
                 case 3:
-                    System.out.println("Not yet commissioned...");
+                    System.out.println(order.getOrderItems().size());
                     break;
                 default:
                     // Exit the applicaton

@@ -67,12 +67,26 @@ public class MenuView {
      * @return  Returns the validated selection
      */
     public static int menuSelection(Scanner scanner, int maxItems) {
+        // Call the menuSelection function with default
+        return menuSelection(scanner, maxItems, "Please select: ",
+            "Please select a valid menu option.");
+    }
+
+    /**
+     * Prompts the user for a menu selection based on valid inputs
+     * @param scanner   The scaner object for retrieving user input
+     * @param maxItems  The prompt for the user
+     * @return  Returns the validated selection
+     */
+    public static int menuSelection(Scanner scanner, int maxItems,
+        String prompt, String error) {
+            
         int returnVal;
         String selection = "";
 
         do {
             // Prompt for a selection
-            System.out.print("Please select: " + BOLD_TEXT);
+            System.out.print(prompt + BOLD_TEXT);
 
             // Grab the selection
             selection = scanner.nextLine();
@@ -85,7 +99,7 @@ public class MenuView {
             
             // Invalid selection
             if (returnVal == 0) {
-                System.out.print("Please select a valid menu option.\n");
+                System.out.print(error + "\n");
             }
         } while (returnVal == 0);
 

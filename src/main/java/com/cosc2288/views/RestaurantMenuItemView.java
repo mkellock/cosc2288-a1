@@ -12,6 +12,7 @@ package com.cosc2288.views;
 
 import com.cosc2288.models.Menu;
 import com.cosc2288.models.MenuItem;
+import com.cosc2288.models.OrderItem;
 import com.cosc2288.models.Restaurant;
 import com.cosc2288.models.RestaurantMenuItem;
 import java.util.LinkedList;
@@ -65,19 +66,37 @@ public class RestaurantMenuItemView {
      * @param border        The border used in constructing the menu
      * @return  Returns the validated restaurant selection
      */
-    public static RestaurantMenuItem restaurantMenuItemSelection(
+    public static OrderItem restaurantMenuItemSelection(
         Scanner scanner, Restaurant restaurant, String border) {
+        RestaurantMenuItem restaurantMenuItem;
+        Integer restaurantMenuItemNo;
+        Integer quantity;
 
         // Display a menu based off the restaurant items
         System.out.print(
             listRestaurantMenuItem(restaurant, border)
         );
 
-        return restaurant.getRestaurantMenuItems().get(
-            MenuView.menuSelection(
+        // Grab the menu item selection
+        restaurantMenuItemNo = MenuView.menuSelection(
                 scanner,
-                restaurant.getRestaurantMenuItems().size()
-            ) - 1
-        );
+                restaurant.getRestaurantMenuItems().size() + 1);
+
+        // Grab the restaurant menu item
+        if (restaurantMenuItemNo <= 
+            restaurant.getRestaurantMenuItems().size()) {
+            // If we're selecting a menu item, grab the menu item
+            restaurantMenuItem = restaurant.getRestaurantMenuItems()
+                .get(restaurantMenuItemNo - 1);
+
+            // Grab the quantity from the user
+            quantity = MenuView.menuSelection(
+                scanner, 100, "Please enter an amount: ",
+                "Please enter a valid quantity.");
+        } else {
+            return null;
+        }
+
+        return new OrderItem(restaurant, restaurantMenuItem, quantity);
     }
 }
