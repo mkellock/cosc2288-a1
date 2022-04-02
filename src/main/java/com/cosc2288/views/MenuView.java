@@ -1,5 +1,15 @@
 package com.cosc2288.views;
 
+/**
+ * MenuView
+ *
+ * v1.0
+ *
+ * 2022-04-02
+ *
+ * © 2022 Matthew Kellock
+ */
+
 import com.cosc2288.models.Menu;
 import com.cosc2288.models.MenuItem;
 import com.cosc2288.models.Restaurant;

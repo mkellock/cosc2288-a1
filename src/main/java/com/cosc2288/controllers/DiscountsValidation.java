@@ -1,9 +1,5 @@
 package com.cosc2288.controllers;
 
-import com.cosc2288.exceptions.OverlappingDiscount;
-import com.cosc2288.models.DiscountItem;
-import com.cosc2288.models.Discounts;
-
 /**
  * DiscountsValidation
  *
@@ -13,6 +9,10 @@ import com.cosc2288.models.Discounts;
  *
  * © 2022 Matthew Kellock
  */
+
+import com.cosc2288.exceptions.OverlappingDiscount;
+import com.cosc2288.models.DiscountItem;
+import com.cosc2288.models.Discounts;
 
 /** Methods to test the validity of discounts. */
 public class DiscountsValidation {

@@ -1,14 +1,5 @@
 package com.cosc2288.controllers;
 
-import com.cosc2288.models.RestaurantMenuItem;
-import com.cosc2288.models.Restaurants;
-import com.cosc2288.models.Restaurant;
-import com.cosc2288.models.Restaurant.Category;
-import java.io.BufferedReader;
-import java.util.LinkedList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 /**
  * RestaurantsController
  *
@@ -18,6 +9,15 @@ import java.util.regex.Pattern;
  *
  * © 2022 Matthew Kellock
  */
+
+import com.cosc2288.models.RestaurantMenuItem;
+import com.cosc2288.models.Restaurants;
+import com.cosc2288.models.Restaurant;
+import com.cosc2288.models.Restaurant.Category;
+import java.io.BufferedReader;
+import java.util.LinkedList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class RestaurantsController {
     private Restaurants restaurants;
@@ -45,7 +45,8 @@ public class RestaurantsController {
             new LinkedList<Restaurant>();
 
         // Regex pattern for menu items
-        Pattern patternResturant = Pattern.compile("[^,]+,[^,]+,\\$\\d+.\\d+,");
+        Pattern patternRestaurant =
+            Pattern.compile("[^,]+,[^,]+,\\$\\d+.\\d+,");
         Pattern patternMenuItem = Pattern.compile("([^,]*)-\\$[\\d.]+");
 
         // Loop through each line provided by the buffered reader
@@ -54,7 +55,7 @@ public class RestaurantsController {
             String[] splitLine = readerLine.split(",");
 
             // Match the restaurants information
-            if (patternResturant.matcher(readerLine).find()) {
+            if (patternRestaurant.matcher(readerLine).find()) {
                 // Create a new list for the menu items
                 LinkedList<RestaurantMenuItem> restaurantMenuItems = 
                     new LinkedList<RestaurantMenuItem>();

@@ -1,5 +1,15 @@
 package com.cosc2288;
 
+/**
+ * App
+ *
+ * v1.0
+ *
+ * 2022-03-20
+ *
+ * © 2022 Matthew Kellock
+ */
+
 import com.cosc2288.controllers.DiscountsController;
 import com.cosc2288.controllers.RestaurantsController;
 import com.cosc2288.exceptions.InvalidCommandLineArg;
@@ -11,7 +21,7 @@ import com.cosc2288.models.MenuItem;
 import com.cosc2288.models.Restaurant;
 import com.cosc2288.models.Restaurants;
 import com.cosc2288.views.MenuView;
-import com.cosc2288.views.ResturantMenuView;
+import com.cosc2288.views.RestaurantMenuView;
 import java.io.BufferedReader;
 import java.io.Console;
 import java.io.File;
@@ -19,9 +29,6 @@ import java.io.FileReader;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-/**
- * Hello world!
- */
 public final class App {
     private static final String BORDER =
         "-------------------------------------------------------\n";
@@ -101,48 +108,55 @@ public final class App {
             
             switch (selection) {
                 case 1:
-                    // Display the restaurant categories
-                    System.out.print(
-                        MenuView.DisplayMenu(
-                            restaurantCategoriesMenu,
-                            BORDER
-                        )
-                    );
+                case 2:
+                    Restaurant restaurantSelection = null;
 
-                    // Retrieve the category selection
-                    Integer categorySelection =
-                        MenuView.MenuSelection(
-                            scanner,
-                            Category.values().length + 1
+                    // If we're searching by category
+                    if (selection == 1) {
+                        // Display the restaurant categories
+                        System.out.print(
+                            MenuView.DisplayMenu(
+                                restaurantCategoriesMenu,
+                                BORDER
+                            )
                         );
 
-                    // Transpose the category selection into a category
-                    if (categorySelection <= Category.values().length) {
-                        Category category;
-                        category = Category.values()[categorySelection - 1];
+                        // Retrieve the category selection
+                        Integer categorySelection =
+                            MenuView.MenuSelection(
+                                scanner,
+                                Category.values().length + 1
+                            );
 
-                        // Retrieve the restaurant selection
-                        Restaurant resturantSelection =
-                            ResturantMenuView.RestaurantSelection(
+                        // Transpose the category selection into a category
+                        if (categorySelection <= Category.values().length) {
+                            Category category;
+                            category = Category.values()[categorySelection - 1];
+
+                            // Retrieve the restaurant selection
+                            restaurantSelection =
+                                RestaurantMenuView.RestaurantSelection(
+                                    scanner,
+                                    restaurants,
+                                    category,
+                                    BORDER
+                            );
+
+                            System.out.print(restaurantSelection.getName());
+                        }
+                    } else { // If we're searching by text input
+                        restaurantSelection =
+                            RestaurantMenuView.RestaurantSearch(
                                 scanner,
                                 restaurants,
-                                category,
                                 BORDER
                         );
-
-                        System.out.print(resturantSelection.getName());
                     }
 
-                    break;
-                case 2:
-                    Restaurant resturantSelection =
-                        ResturantMenuView.RestaurantSearch(
-                            scanner,
-                            restaurants,
-                            BORDER
-                    );
-
-                    System.out.print(resturantSelection.getName());
+                    // If we have selected a restaurant
+                    if (restaurantSelection != null) {
+                        System.out.print(restaurantSelection.getName());
+                    }
 
                     break;
                 case 3:

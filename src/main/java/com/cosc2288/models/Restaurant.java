@@ -1,7 +1,5 @@
 package com.cosc2288.models;
 
-import java.util.LinkedList;
-
 /**
  * Restaurant
  *
@@ -11,6 +9,8 @@ import java.util.LinkedList;
  *
  * © 2022 Matthew Kellock
  */
+
+import java.util.LinkedList;
 
 /** Restaurant object is used in the construction of Returants and their
  * functions. */

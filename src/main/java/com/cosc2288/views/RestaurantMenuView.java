@@ -1,5 +1,15 @@
 package com.cosc2288.views;
 
+/**
+ * RestaurantMenuView
+ *
+ * v1.0
+ *
+ * 2022-04-02
+ *
+ * © 2022 Matthew Kellock
+ */
+
 import com.cosc2288.models.Menu;
 import com.cosc2288.models.MenuItem;
 import com.cosc2288.models.Restaurant;
@@ -9,10 +19,10 @@ import com.cosc2288.views.MenuView;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class ResturantMenuView extends MenuView {
+public class RestaurantMenuView extends MenuView {
     /**
-     * Instansiates the menu from a series of resturants
-     * @param restaurants   List of resturants
+     * Instansiates the menu from a series of restaurants
+     * @param restaurants   List of restaurants
      * @param border        The border used in constructing the menu
      * @return  Returns the constructed menu
      */
@@ -39,28 +49,29 @@ public class ResturantMenuView extends MenuView {
      * Give the user the ability to search for restaurants and returns a
      * selection
      * @param scanner       The scaner object for retrieving user input
-     * @param restaurants   List of resturants
+     * @param restaurants   List of restaurants
      * @param category      The category selection
      * @param border        The border used in constructing the menu
-     * @return  Returns the validated resturant selection
+     * @return  Returns the validated restaurant selection
      */
     public static Restaurant RestaurantSelection(Scanner scanner, 
         Restaurants restaurants, Category category, String border) {
-        LinkedList<Restaurant> resturants = new LinkedList<Restaurant>();
+        LinkedList<Restaurant> filteredRestaurants =
+            new LinkedList<Restaurant>();
 
         for (Restaurant restaurant : restaurants.getRestaurants()) {
             if (category == restaurant.getCategory()) {
-                resturants.add(restaurant);
+                filteredRestaurants.add(restaurant);
             }
         }
 
         // Display a menu based off the restaurant items
         System.out.print(
-            ListRestaurants(resturants, border)
+            ListRestaurants(filteredRestaurants, border)
         );
 
-        return resturants.get(
-            MenuSelection(scanner, resturants.size()) - 1
+        return filteredRestaurants.get(
+            MenuSelection(scanner, filteredRestaurants.size()) - 1
         );
     }
 
@@ -68,13 +79,14 @@ public class ResturantMenuView extends MenuView {
      * Give the user the ability to search for restaurants and returns a
      * selection
      * @param scanner       The scaner object for retrieving user input
-     * @param restaurants   List of resturants
+     * @param restaurants   List of restaurants
      * @param border        The border used in constructing the menu
-     * @return  Returns the validated resturant selection
+     * @return  Returns the validated restaurant selection
      */
     public static Restaurant RestaurantSearch(Scanner scanner, 
         Restaurants restaurants, String border) {
-            LinkedList<Restaurant> resturants = new LinkedList<Restaurant>();
+            LinkedList<Restaurant> filteredRestaurants =
+                new LinkedList<Restaurant>();
             String selection = "";
 
             do {
@@ -90,17 +102,17 @@ public class ResturantMenuView extends MenuView {
                     for (Restaurant restaurant : restaurants.getRestaurants()) {
                         if (restaurant.getName().toLowerCase()
                             .contains(selection.toLowerCase())) {
-                            resturants.add(restaurant);
+                            filteredRestaurants.add(restaurant);
                         }
                     }
 
                     // Display a menu based off the restaurant items
                     System.out.print(
-                        ListRestaurants(resturants, border)
+                        ListRestaurants(filteredRestaurants, border)
                     );
 
-                    return resturants.get(
-                        MenuSelection(scanner, resturants.size()) - 1
+                    return filteredRestaurants.get(
+                        MenuSelection(scanner, filteredRestaurants.size()) - 1
                     );
                 }
 

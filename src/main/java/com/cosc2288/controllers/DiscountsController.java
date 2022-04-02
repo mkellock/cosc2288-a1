@@ -1,11 +1,5 @@
 package com.cosc2288.controllers;
 
-import com.cosc2288.models.DiscountItem;
-import com.cosc2288.models.Discounts;
-import java.io.BufferedReader;
-import java.util.Collections;
-import java.util.LinkedList;
-
 /**
  * DiscountsController
  *
@@ -15,6 +9,12 @@ import java.util.LinkedList;
  *
  * © 2022 Matthew Kellock
  */
+
+import com.cosc2288.models.DiscountItem;
+import com.cosc2288.models.Discounts;
+import java.io.BufferedReader;
+import java.util.Collections;
+import java.util.LinkedList;
 
 /** Controller to manage the behaviour of the Discounts model. */
 public class DiscountsController {
