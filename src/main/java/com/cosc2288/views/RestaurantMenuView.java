@@ -74,9 +74,16 @@ public class RestaurantMenuView {
             listRestaurants(filteredRestaurants, border)
         );
 
-        return filteredRestaurants.get(
-            MenuView.menuSelection(scanner, filteredRestaurants.size()) - 1
-        );
+        Integer itemSelection = MenuView.menuSelection(scanner, 
+            filteredRestaurants.size() + 1);
+
+        if (itemSelection <= filteredRestaurants.size()) {
+            return filteredRestaurants.get(
+                itemSelection - 1
+            );
+        } else {
+            return null;
+        }
     }
 
     /**
@@ -115,12 +122,16 @@ public class RestaurantMenuView {
                         listRestaurants(filteredRestaurants, border)
                     );
 
-                    return filteredRestaurants.get(
-                        MenuView.menuSelection(
-                            scanner,
-                            filteredRestaurants.size()
-                        ) - 1
-                    );
+                    Integer itemSelection = MenuView.menuSelection(scanner, 
+                        filteredRestaurants.size() + 1);
+
+                    if (itemSelection <= filteredRestaurants.size()) {
+                        return filteredRestaurants.get(
+                            itemSelection - 1
+                        );
+                    } else {
+                        return null;
+                    }
                 }
 
             } while (selection.equals(""));

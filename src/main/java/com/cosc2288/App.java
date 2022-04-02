@@ -21,6 +21,7 @@ import com.cosc2288.models.MenuItem;
 import com.cosc2288.models.Restaurant;
 import com.cosc2288.models.Restaurants;
 import com.cosc2288.views.MenuView;
+import com.cosc2288.views.RestaurantMenuItemView;
 import com.cosc2288.views.RestaurantMenuView;
 import java.io.BufferedReader;
 import java.io.File;
@@ -139,8 +140,6 @@ public final class App {
                                     category,
                                     BORDER
                             );
-
-                            System.out.print(restaurantSelection.getName());
                         }
                     } else { // If we're searching by text input
                         restaurantSelection =
@@ -153,7 +152,10 @@ public final class App {
 
                     // If we have selected a restaurant
                     if (restaurantSelection != null) {
-                        System.out.print(restaurantSelection.getName());
+                        RestaurantMenuItemView.restaurantMenuItemSelection(
+                            scanner,
+                            restaurantSelection,
+                            BORDER);
                     }
 
                     break;

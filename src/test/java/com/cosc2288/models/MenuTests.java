@@ -1,11 +1,5 @@
 package com.cosc2288.models;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-
 /**
  * MenuTests
  *
@@ -15,6 +9,12 @@ import org.junit.jupiter.api.Test;
  *
  * © 2022 Matthew Kellock
  */
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 /** Series of Menu tests. */
 class MenuTests {

@@ -172,6 +172,7 @@
                 <configuration>
                     <excludes>
                         <exclude>**/App.class</exclude>
+                        <exclude>**/views/**</exclude>
                     </excludes>
                 </configuration>
             </plugin>
