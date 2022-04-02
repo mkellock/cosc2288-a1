@@ -14,8 +14,6 @@ import com.cosc2288.models.Menu;
 import com.cosc2288.models.MenuItem;
 import com.cosc2288.models.Restaurant;
 import com.cosc2288.models.RestaurantMenuItem;
-import com.cosc2288.models.Restaurants;
-import com.cosc2288.models.Restaurant.Category;
 import java.util.LinkedList;
 import java.util.Scanner;
 
