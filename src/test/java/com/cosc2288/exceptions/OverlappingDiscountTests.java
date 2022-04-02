@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
 public class OverlappingDiscountTests {
 
     @Test
-    public void shouldCreateExceptionAndReturnDescription() {
+    void shouldCreateExceptionAndReturnDescription() {
         final String exceptionMessage = "Test description";
 
         OverlappingDiscount overlappingDiscounts =

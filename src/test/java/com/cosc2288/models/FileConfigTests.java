@@ -19,7 +19,7 @@ public class FileConfigTests {
     private static final String RESTAURANTS_PATH = "/Some/Path/Discounts.csv";
 
     @Test
-    public void shouldConstructAndSetPlusGetFileConfigValues() {
+    void shouldConstructAndSetPlusGetFileConfigValues() {
         FileConfig fileConfig = new FileConfig();
 
         // Set the paths

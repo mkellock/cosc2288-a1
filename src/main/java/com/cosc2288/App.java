@@ -162,7 +162,7 @@ public final class App {
                 case 3:
                     System.out.println("Not yet commissioned...");
                     break;
-                case 4:
+                default:
                     // Exit the applicaton
                     leaveApp = true;
             }

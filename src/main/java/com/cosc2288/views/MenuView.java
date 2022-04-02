@@ -23,6 +23,10 @@ public class MenuView {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String BOLD_TEXT = "\033[0;1m";
 
+    public MenuView() {
+        // Empty constructor to hide the implicit public one
+    }
+
     /**
      * Generates a string representation of the menu
      * @param menu      The menu items that are going to be displayed

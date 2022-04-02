@@ -35,21 +35,21 @@ public class DiscountsTests {
     }
 
     @Test
-    public void shouldConstructAndGetDiscountValues() {
+    void shouldConstructAndGetDiscountValues() {
         Discounts discounts = new Discounts();
         discounts.setDiscountItems(DISCOUNT_ITEMS);
         Assertions.assertEquals(DISCOUNT_ITEMS, discounts.getDiscountItems());
     }
 
     @Test
-    public void shouldConstructAndSetPlusGetDiscountValues() {
+    void shouldConstructAndSetPlusGetDiscountValues() {
         Discounts discounts = new Discounts();
         discounts.setDiscountItems(DISCOUNT_ITEMS);
         Assertions.assertEquals(DISCOUNT_ITEMS, discounts.getDiscountItems());
     }
 
     @Test
-    public void shouldSetAndGetDeliveryDiscountRestaurantCount() {
+    void shouldSetAndGetDeliveryDiscountRestaurantCount() {
         Discounts discounts = new Discounts();
         discounts.setDeliveryDiscountRestaurantCount(
             DELIVERY_DISCOUNT_RESTAURANT_COUNT
@@ -60,7 +60,7 @@ public class DiscountsTests {
     }
 
     @Test
-    public void shouldSetAndGetDeliveryDiscountRestaurantPercentage() {
+    void shouldSetAndGetDeliveryDiscountRestaurantPercentage() {
         Discounts discounts = new Discounts();
         discounts.setDeliveryDiscountRestaurantPercent(
             DELIVERY_DISCOUNT_RESTAURANT_PERCENTAGE

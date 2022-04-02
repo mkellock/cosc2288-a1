@@ -25,7 +25,7 @@ import org.junit.jupiter.api.Test;
 public class DiscountsValidationTests {
 
     @Test
-    public void shouldNotThrowOverlappingDiscountException()
+    void shouldNotThrowOverlappingDiscountException()
             throws IllegalAccessException, IllegalArgumentException,
             InvocationTargetException {
         // Set up the discount items for the test
@@ -54,7 +54,7 @@ public class DiscountsValidationTests {
     }
 
     @Test
-    public void shouldNotThrowOverlappingMaxDiscount()
+    void shouldNotThrowOverlappingMaxDiscount()
             throws IllegalAccessException, IllegalArgumentException, 
             InvocationTargetException {
         // Set up the discount items for the test
@@ -94,7 +94,7 @@ public class DiscountsValidationTests {
     }
 
     @Test
-    public void shouldThrowOverlappingMaxDiscount()
+    void shouldThrowOverlappingMaxDiscount()
             throws IllegalAccessException, IllegalArgumentException,
             InvocationTargetException {
         // Set up the discount items for the test
@@ -144,7 +144,7 @@ public class DiscountsValidationTests {
     }
 
     @Test
-    public void shouldNotThrowOverlappingDiscountValidatingMinDiscounts()
+    void shouldNotThrowOverlappingDiscountValidatingMinDiscounts()
             throws IllegalAccessException, IllegalArgumentException,
             InvocationTargetException {
         // Set up the discount items for the test
@@ -182,7 +182,7 @@ public class DiscountsValidationTests {
     }
 
     @Test
-    public void shouldThrowOverlappingDiscountValidatingMinDiscounts()
+    void shouldThrowOverlappingDiscountValidatingMinDiscounts()
             throws IllegalAccessException, IllegalArgumentException,
                 InvocationTargetException {
         // Set up the discount items for the test
@@ -231,7 +231,7 @@ public class DiscountsValidationTests {
     }
 
     @Test
-    public void shouldNotThrowOverlappingDiscountValidatingMaxDiscounts()
+    void shouldNotThrowOverlappingDiscountValidatingMaxDiscounts()
             throws IllegalAccessException, IllegalArgumentException,
                 InvocationTargetException {
         // Set up the discount items for the test
@@ -269,7 +269,7 @@ public class DiscountsValidationTests {
     }
 
     @Test
-    public void shouldThrowOverlappingDiscountValidatingMaxDiscounts()
+    void shouldThrowOverlappingDiscountValidatingMaxDiscounts()
             throws IllegalAccessException, IllegalArgumentException,
                 InvocationTargetException {
         // Set up the discount items for the test
@@ -318,7 +318,7 @@ public class DiscountsValidationTests {
     }
 
     @Test
-    public void shouldNotThrowOverlappingDiscountValidatingMinMaxDiscounts()
+    void shouldNotThrowOverlappingDiscountValidatingMinMaxDiscounts()
             throws IllegalAccessException, IllegalArgumentException,
             InvocationTargetException {
         // Set up the discount items for the test
@@ -358,7 +358,7 @@ public class DiscountsValidationTests {
     }
 
     @Test
-    public void shouldThrowOverlappingDiscountValidatingMinMaxDiscounts()
+    void shouldThrowOverlappingDiscountValidatingMinMaxDiscounts()
             throws IllegalAccessException, IllegalArgumentException,
             InvocationTargetException {
         // Set up the discount items for the test

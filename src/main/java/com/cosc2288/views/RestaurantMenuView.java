@@ -20,6 +20,11 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class RestaurantMenuView extends MenuView {
+
+    public RestaurantMenuView() {
+        // Empty constructor to hide the implicit public one
+    }
+
     /**
      * Instansiates the menu from a series of restaurants
      * @param restaurants   List of restaurants
@@ -98,7 +103,7 @@ public class RestaurantMenuView extends MenuView {
                 // Grab the selection
                 selection = scanner.nextLine();
 
-                if (selection != "") {
+                if (selection.equals("")) {
                     for (Restaurant restaurant : restaurants.getRestaurants()) {
                         if (restaurant.getName().toLowerCase()
                             .contains(selection.toLowerCase())) {
@@ -116,7 +121,7 @@ public class RestaurantMenuView extends MenuView {
                     );
                 }
 
-            } while (selection == "");
+            } while (selection.equals(""));
 
             return null;
     }

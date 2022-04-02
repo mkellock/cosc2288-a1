@@ -107,7 +107,7 @@ public class RestaurantsControllerTests {
     }
 
     @Test
-    public void shouldLoadRestaurants() throws java.io.IOException {
+    void shouldLoadRestaurants() throws java.io.IOException {
         final String sampleRestaurants =
             "Restaurant 1,Fast food,$1.10,Item 1-1-$1.00,Item 1-2-$2.00\n"
             + "Restaurant 2,Restaurant,$2.20,Item 2-1-$3.00,Item 2-2-$4.00\n"

@@ -34,7 +34,7 @@ public class RestaurantsTests {
     }
 
     @Test
-    public void shouldConstructAndSetAndGetRestaurants() {
+    void shouldConstructAndSetAndGetRestaurants() {
         Restaurants restaurantList = new Restaurants();
         restaurantList.setRestaurants(RESTAURANTS);
         Assertions.assertEquals(RESTAURANTS, restaurantList.getRestaurants());

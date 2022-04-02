@@ -20,7 +20,7 @@ public class DiscountItemTests {
     private static final int PERCENT = 20;
 
     @Test
-    public void shouldConstructAndGetDiscountItemValuesNoMax() {
+    void shouldConstructAndGetDiscountItemValuesNoMax() {
         DiscountItem discountItem = new DiscountItem(MIN, PERCENT);
         Assertions.assertEquals(MIN, discountItem.getMin());
         Assertions.assertEquals(Integer.MAX_VALUE, discountItem.getMax());
@@ -28,7 +28,7 @@ public class DiscountItemTests {
     }
 
     @Test
-    public void shouldConstructAndGetDiscountItemValues() {
+    void shouldConstructAndGetDiscountItemValues() {
         DiscountItem discountItem = new DiscountItem(MIN, MAX, PERCENT);
         Assertions.assertEquals(MIN, discountItem.getMin());
         Assertions.assertEquals(MAX, discountItem.getMax());

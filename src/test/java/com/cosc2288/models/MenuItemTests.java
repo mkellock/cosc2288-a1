@@ -18,7 +18,7 @@ public class MenuItemTests {
     private static final String TITLE = "Item 1";
 
     @Test
-    public void shouldConstructAndGetMenuItemValues() {
+    void shouldConstructAndGetMenuItemValues() {
         MenuItem menuItem = new MenuItem(TITLE);
         Assertions.assertEquals(TITLE, menuItem.getTitle());
     }

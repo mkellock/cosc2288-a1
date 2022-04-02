@@ -19,7 +19,7 @@ public class RestaurantMenuItemTests {
     private static final double PRICE = 123.45;
 
     @Test
-    public void shouldConstructAndRestaurantMenuItemValues() {
+    void shouldConstructAndRestaurantMenuItemValues() {
         RestaurantMenuItem restaurantMenuItem = new RestaurantMenuItem(
             DESCRIPTION,
             PRICE);

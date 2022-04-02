@@ -38,7 +38,7 @@ public class RestaurantTests {
     }
 
     @Test
-    public void shouldConstructAndGetMenuValues() {
+    void shouldConstructAndGetMenuValues() {
         Restaurant restaurant =
             new Restaurant(NAME, CATEGORY, DELIVERY_FEE, MENU_ITEMS);
         Assertions.assertEquals(NAME, restaurant.getName());

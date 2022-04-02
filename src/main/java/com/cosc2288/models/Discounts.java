@@ -21,12 +21,6 @@ public class Discounts {
     private int deliveryDiscountRestaurantPercent;
 
     /**
-     * Initialises the Discounts object
-     */
-    public Discounts() {
-    }
-
-    /**
      * Property to retrieve the discount items.
      * @return  Collection of discount items
      */

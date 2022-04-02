@@ -32,7 +32,7 @@ public class MenuTests {
     }
 
     @Test
-    public void shouldConstructAndGetMenuValues() {
+    void shouldConstructAndGetMenuValues() {
         Menu menu = new Menu(MENU_TITLE, MENU_ITEMS);
         Assertions.assertEquals(MENU_TITLE, menu.getMenuTitle());
         Assertions.assertEquals(MENU_ITEMS, menu.getMenuItems());

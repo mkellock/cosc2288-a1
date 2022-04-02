@@ -16,20 +16,14 @@ import java.util.LinkedList;
  * The Restaurants object is used in maintaining a collection of restaurants.
  */
 public class Restaurants {
-    private LinkedList<Restaurant> restaurants;
-
-    /**
-     * Initialises the Restaurants object
-     */
-    public Restaurants() {
-    }
+    private LinkedList<Restaurant> restaurantsList;
 
     /**
      * Property to retrieve the restaurant items.
      * @return  Collection of restaurants
      */
     public LinkedList<Restaurant> getRestaurants() {
-        return this.restaurants;
+        return this.restaurantsList;
     }
 
     /**
@@ -37,6 +31,6 @@ public class Restaurants {
      * @param restaurants Collection of restaurants
      */
     public void setRestaurants(LinkedList<Restaurant> restaurants) {
-        this.restaurants = restaurants;
+        this.restaurantsList = restaurants;
     }
 }

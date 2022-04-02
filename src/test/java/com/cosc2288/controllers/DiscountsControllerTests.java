@@ -52,7 +52,7 @@ public class DiscountsControllerTests {
      * @throws IllegalAccessException
      */
     @Test
-    public void shouldSortDiscounts()
+    void shouldSortDiscounts()
             throws IllegalAccessException, IllegalArgumentException,
             InvocationTargetException {
         // Set up the discount items for the test
@@ -86,7 +86,7 @@ public class DiscountsControllerTests {
     }
 
     @Test
-    public void shouldLoadDiscounts() throws java.io.IOException {
+    void shouldLoadDiscounts() throws java.io.IOException {
         final String sampleDiscounts =
             "[0,20),5%\n[20,40),10%\n[40,60),15%\n[60,),20%\n2,50%";
         final Reader sampleDiscountsReader = new StringReader(sampleDiscounts);
