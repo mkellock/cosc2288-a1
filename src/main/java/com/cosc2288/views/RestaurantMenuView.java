@@ -22,7 +22,7 @@ import java.util.Scanner;
 public class RestaurantMenuView extends MenuView {
 
     public RestaurantMenuView() {
-        // Empty constructor to hide the implicit public one
+        // Empty constructor
     }
 
     /**

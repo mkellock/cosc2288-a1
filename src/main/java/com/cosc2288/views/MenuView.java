@@ -24,7 +24,7 @@ public class MenuView {
     public static final String BOLD_TEXT = "\033[0;1m";
 
     public MenuView() {
-        // Empty constructor to hide the implicit public one
+        // Empty constructor
     }
 
     /**
