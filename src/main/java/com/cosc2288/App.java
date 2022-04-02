@@ -8,8 +8,10 @@ import com.cosc2288.models.Discounts;
 import com.cosc2288.models.FileConfig;
 import com.cosc2288.models.Menu;
 import com.cosc2288.models.MenuItem;
+import com.cosc2288.models.Restaurant;
 import com.cosc2288.models.Restaurants;
 import com.cosc2288.views.MenuView;
+import com.cosc2288.views.ResturantMenuView;
 import java.io.BufferedReader;
 import java.io.Console;
 import java.io.File;
@@ -75,7 +77,7 @@ public final class App {
         // Set the main menu items
         LinkedList<MenuItem> menuItems = new LinkedList<MenuItem>();
         menuItems.add(new MenuItem("Browse by category"));
-        menuItems.add(new MenuItem("Browse by restaurant"));
+        menuItems.add(new MenuItem("Search by restaurant"));
         menuItems.add(new MenuItem("Checkout"));
         menuItems.add(new MenuItem("Exit"));
         mainMenu = new Menu("Select from main menu", menuItems);
@@ -92,20 +94,26 @@ public final class App {
         while (!leaveApp) {
             System.out.print(MenuView.DisplayMenu(mainMenu, BORDER));
             Integer selection =
-                MenuView.MenuSelection(scanner, mainMenu.getMenuItems().size());
+                MenuView.MenuSelection(
+                    scanner,
+                    mainMenu.getMenuItems().size()
+                );
             
             switch (selection) {
                 case 1:
                     // Display the restaurant categories
                     System.out.print(
-                        MenuView.DisplayMenu(restaurantCategoriesMenu, BORDER)
+                        MenuView.DisplayMenu(
+                            restaurantCategoriesMenu,
+                            BORDER
+                        )
                     );
 
                     // Retrieve the category selection
                     Integer categorySelection =
                         MenuView.MenuSelection(
                             scanner,
-                            Category.values().length
+                            Category.values().length + 1
                         );
 
                     // Transpose the category selection into a category
@@ -113,33 +121,28 @@ public final class App {
                         Category category;
                         category = Category.values()[categorySelection - 1];
 
-                        // List the restaurants
-                        System.out.print(
-                            MenuView.ListRestaurants(
-                                restaurants, 
-                                category, 
-                                BORDER)
+                        // Retrieve the restaurant selection
+                        Restaurant resturantSelection =
+                            ResturantMenuView.RestaurantSelection(
+                                scanner,
+                                restaurants,
+                                category,
+                                BORDER
                         );
 
-                        // Retrieve the restaurant selection
-                        Integer catResturantSelection =
-                            MenuView.MenuSelection(
-                                scanner,
-                                restaurants.getRestaurants().size()
-                        );
+                        System.out.print(resturantSelection.getName());
                     }
 
                     break;
                 case 2:
-                    System.out.print(
-                        MenuView.ListRestaurants(restaurants, BORDER)
+                    Restaurant resturantSelection =
+                        ResturantMenuView.RestaurantSearch(
+                            scanner,
+                            restaurants,
+                            BORDER
                     );
 
-                    Integer resturantSelection =
-                        MenuView.MenuSelection(
-                            scanner,
-                            restaurants.getRestaurants().size()
-                    );
+                    System.out.print(resturantSelection.getName());
 
                     break;
                 case 3:

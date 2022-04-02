@@ -8,67 +8,16 @@ import com.cosc2288.models.Restaurant.Category;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-import javax.swing.MenuSelectionManager;
-
 public class MenuView {
 
-    private static final String ANSI_RESET = "\u001B[0m";
-    private static final String BOLD_TEXT = "\033[0;1m";
-
-    /**
-     * Instansiates the menu from a series of resturants
-     * @param restaurants   List of resturants
-     */
-    public static String ListRestaurants(Restaurants restaurants,
-        String border) {
-        LinkedList<MenuItem> menuItems = new LinkedList<MenuItem>();
-
-        // Loop through the restaurants
-        for (Restaurant restaurant : restaurants.getRestaurants()) {
-            menuItems.add(new MenuItem(restaurant.getName()));
-        }
-
-        // Add the main menu item
-        menuItems.add(new MenuItem("Go to main menu"));
-
-        // Display a menu based off the restaurant items
-        return DisplayMenu(
-            new Menu("Select from restaurant list", menuItems),
-            border
-        );
-    }
-
-    /**
-     * Instansiates the menu from a series of resturants for a particular
-     * category
-     * @param restaurants   List of resturants
-     * @param category      The category we want to limit the list to
-     */
-    public static String ListRestaurants(Restaurants restaurants,
-        Category category, String border) {
-        LinkedList<MenuItem> menuItems = new LinkedList<MenuItem>();
-
-        for (Restaurant restaurant : restaurants.getRestaurants()) {
-            if (category == restaurant.getCategory()) {
-                menuItems.add(new MenuItem(restaurant.getName()));
-            }
-        }
-
-        // Add the main menu item
-        menuItems.add(new MenuItem("Go to main menu"));
-
-        // Display a menu based off the restaurant items
-        return DisplayMenu(
-            new Menu("Select from restaurant list", menuItems),
-            border
-        );
-    }
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String BOLD_TEXT = "\033[0;1m";
 
     /**
      * Generates a string representation of the menu
-     * @param divider   The horizontal divider for the menu
-     * @param title     The menu's title
-     * @return
+     * @param menu      The menu items that are going to be displayed
+     * @param border    The border used in constructing the menu
+     * @return  Returns the constructed menu
      */
     public static String DisplayMenu(Menu menu, String border) {
         Integer itemCounter = 1;
@@ -98,7 +47,9 @@ public class MenuView {
 
     /**
      * Prompts the user for a menu selection based on valid inputs
-     * @return  Returns the selection
+     * @param scanner   The scaner object for retrieving user input
+     * @param maxItems  The maximum amount of menu items used to validate input
+     * @return  Returns the validated selection
      */
     public static int MenuSelection(Scanner scanner, int maxItems) {
         int returnVal;
@@ -127,15 +78,23 @@ public class MenuView {
         return returnVal;
     }
 
+    /**
+     * Validates the user's menu selection
+     * @param selection The input being validated
+     * @param maxItems  The maximum amount of menu items used to validate input
+     * @return  Returns the selection, if invalid, returns 0
+     */
     public static int ValidateSelection(String selection, int maxItems) {
         int returnVal = 0;
 
+        // Numeric input within range
         if (selection.matches("\\d+") 
             && Integer.parseInt(selection) > 0
-            && Integer.parseInt(selection) <= maxItems + 1) { 
+            && Integer.parseInt(selection) <= maxItems) { 
             returnVal = Integer.parseInt(selection);
-        } else if (selection.isBlank()) { // Blank selection
-            returnVal = maxItems + 1;
+        } else if (selection.isBlank()) {
+            // Blank selection, return the last menu item
+            returnVal = maxItems;
         }
 
         return returnVal;
