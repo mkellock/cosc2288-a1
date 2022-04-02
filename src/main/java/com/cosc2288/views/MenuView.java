@@ -19,7 +19,7 @@ public class MenuView {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String BOLD_TEXT = "\033[0;1m";
 
-    public MenuView() {
+    private MenuView() {
         throw new IllegalStateException("Utility class");
     }
 

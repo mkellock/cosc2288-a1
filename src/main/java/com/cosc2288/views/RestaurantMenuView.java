@@ -15,12 +15,13 @@ import com.cosc2288.models.MenuItem;
 import com.cosc2288.models.Restaurant;
 import com.cosc2288.models.Restaurants;
 import com.cosc2288.models.Restaurant.Category;
+import com.cosc2288.views.MenuView;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class RestaurantMenuView extends MenuView {
+public class RestaurantMenuView {
 
-    public RestaurantMenuView() {
+    private RestaurantMenuView() {
         throw new IllegalStateException("Utility class");
     }
 
@@ -43,7 +44,7 @@ public class RestaurantMenuView extends MenuView {
         menuItems.add(new MenuItem("Go to main menu"));
 
         // Display a menu based off the restaurant items
-        return displayMenu(
+        return MenuView.displayMenu(
             new Menu("Select from restaurant list", menuItems),
             border
         );
@@ -75,7 +76,7 @@ public class RestaurantMenuView extends MenuView {
         );
 
         return filteredRestaurants.get(
-            menuSelection(scanner, filteredRestaurants.size()) - 1
+            MenuView.menuSelection(scanner, filteredRestaurants.size()) - 1
         );
     }
 
@@ -96,7 +97,7 @@ public class RestaurantMenuView extends MenuView {
             do {
                 // Prompt for a selection
                 System.out.print(
-                    "Please enter a restaurant name: " + BOLD_TEXT
+                    "Please enter a restaurant name: " + MenuView.BOLD_TEXT
                     );
 
                 // Grab the selection
@@ -116,7 +117,10 @@ public class RestaurantMenuView extends MenuView {
                     );
 
                     return filteredRestaurants.get(
-                        menuSelection(scanner, filteredRestaurants.size()) - 1
+                        MenuView.menuSelection(
+                            scanner,
+                            filteredRestaurants.size()
+                        ) - 1
                     );
                 }
 
