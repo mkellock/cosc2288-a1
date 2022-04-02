@@ -185,33 +185,34 @@ public final class App {
 
         // Loop through the command line arguements
         for (int i = 0; i < args.length; i++) {
-            // If we're not grabbing a command line value
-            if (Boolean.FALSE.equals(settingArg)) {
-                switch (args[i]) {
-                    case "--help": // Help command
-                    case "-h":
-                        return helpCommand;
-                    case "--discounts": // Discounts file location
-                    case "-d":
-                        if (args.length >= i + 1) {
-                            fileConfig.setDiscountsPath(args[i + 1]);
-                            settingArg = true;
-                        }
-                        break;
-                    case "--restaurants": // Restaurants file location
-                    case "-r":
-                        if (args.length >= i + 1) {
-                            fileConfig.setRestaurantsPath(args[i + 1]);
-                            settingArg = true;
-                        }
-                        break;
-                    default: // Unexpected command line arg
+            switch (args[i]) {
+                case "--help": // Help command
+                case "-h":
+                    return helpCommand;
+                case "--discounts": // Discounts file location
+                case "-d":
+                    if (args.length >= i + 1) {
+                        fileConfig.setDiscountsPath(args[i + 1]);
+                        settingArg = true;
+                    }
+                    break;
+                case "--restaurants": // Restaurants file location
+                case "-r":
+                    if (args.length >= i + 1) {
+                        fileConfig.setRestaurantsPath(args[i + 1]);
+                        settingArg = true;
+                    }
+                    break;
+                default: // Unexpected command line arg
+                    // If we're not grabbing a command line value
+                    if (Boolean.FALSE.equals(settingArg)) {
                         throw new InvalidCommandLineArg(
                             String.format(invalidCommandLineArg, args[i])
                         );
-                }
-            } else { // Reset to look for command line key
-                settingArg = false;
+                    } else {
+                        // Reset to look for command line key
+                        settingArg = false;
+                    }
             }
         }
 

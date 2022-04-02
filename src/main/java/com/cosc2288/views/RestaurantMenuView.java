@@ -15,7 +15,6 @@ import com.cosc2288.models.MenuItem;
 import com.cosc2288.models.Restaurant;
 import com.cosc2288.models.Restaurants;
 import com.cosc2288.models.Restaurant.Category;
-import com.cosc2288.views.MenuView;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -103,10 +102,10 @@ public class RestaurantMenuView {
                 // Grab the selection
                 selection = scanner.nextLine();
 
-                if (selection.equals("")) {
+                if (!selection.equals("")) {
                     for (Restaurant restaurant : restaurants.getRestaurants()) {
                         if (restaurant.getName().toLowerCase()
-                            .contains(selection.toLowerCase())) {
+                                .contains(selection.toLowerCase())) {
                             filteredRestaurants.add(restaurant);
                         }
                     }

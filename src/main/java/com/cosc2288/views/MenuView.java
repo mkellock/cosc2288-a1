@@ -33,26 +33,31 @@ public class MenuView {
         Integer itemCounter = 1;
 
         // Generate the menu title
-        String returnVal = border + "> " + menu.getMenuTitle() + 
-            "\n" + border;
+        StringBuilder returnVal = new StringBuilder();
+        returnVal.append(border);
+        returnVal.append("> ");
+        returnVal.append(menu.getMenuTitle());
+        returnVal.append("\n");
+        returnVal.append(border);
 
         // Loop through the menu items
         for (MenuItem menuItem : menu.getMenuItems()) {
             if (itemCounter == menu.getMenuItems().size()) {
-                returnVal += BOLD_TEXT;
+                returnVal.append(BOLD_TEXT);
             }
 
-            returnVal += 
+            returnVal.append(
                 String.format("%3s)" + ANSI_RESET + " %s\n", 
                     itemCounter, 
                     menuItem.getTitle()
-                );
+                )
+            );
 
             itemCounter++;
         }
 
         // Return the completed menu
-        return returnVal;
+        return returnVal.toString();
     }
 
     /**
