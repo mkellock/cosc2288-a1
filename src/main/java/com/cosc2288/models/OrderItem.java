@@ -10,8 +10,6 @@ package com.cosc2288.models;
  * © 2022 Matthew Kellock
  */
 
- import java.util.ArrayList;
-
 public class OrderItem {
     private final Restaurant restaurant;
     private final RestaurantMenuItem restaurantMenuItem;
