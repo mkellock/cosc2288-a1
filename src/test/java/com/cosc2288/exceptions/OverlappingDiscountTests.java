@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
  */
 
 /** Series of OverlappingDiscount tests. */
-public class OverlappingDiscountTests {
+class OverlappingDiscountTests {
 
     @Test
     void shouldCreateExceptionAndReturnDescription() {

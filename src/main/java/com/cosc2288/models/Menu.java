@@ -10,18 +10,18 @@ package com.cosc2288.models;
  * © 2022 Matthew Kellock
  */
 
-import java.util.LinkedList;
+import java.util.List;
 
 /** Menu object is used in the creation of UI menus. */
 public class Menu {
     private final String menuTitle;
-    private final LinkedList<MenuItem> menuItems;
+    private final List<MenuItem> menuItems;
 
     /**
      * Initialises the menu with a collection of menu items
      * @param menuItems
      */
-    public Menu(String menuTitle, LinkedList<MenuItem> menuItems) {
+    public Menu(String menuTitle, List<MenuItem> menuItems) {
         this.menuTitle = menuTitle;
         this.menuItems = menuItems;
     }
@@ -34,7 +34,7 @@ public class Menu {
      * Retrieves the menu items
      * @return  The list of menu items
      */
-    public LinkedList<MenuItem> getMenuItems() {
+    public List<MenuItem> getMenuItems() {
         return this.menuItems;
     }
 }

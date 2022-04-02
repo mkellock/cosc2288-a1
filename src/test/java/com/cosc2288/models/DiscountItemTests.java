@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
  */
 
 /** Series of DiscountItem tests. */
-public class DiscountItemTests {
+class DiscountItemTests {
     private static final int MIN = 0;
     private static final int MAX = 10;
     private static final int PERCENT = 20;

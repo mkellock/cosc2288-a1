@@ -22,7 +22,7 @@ import org.junit.jupiter.api.Test;
  */
 
 /** Series of DiscountsValidation tests. */
-public class DiscountsValidationTests {
+class DiscountsValidationTests {
 
     @Test
     void shouldNotThrowOverlappingDiscountException()

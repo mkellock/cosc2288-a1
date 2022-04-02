@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
  */
 
 /** Series of MenuItem tests. */
-public class MenuItemTests {
+class MenuItemTests {
     private static final String TITLE = "Item 1";
 
     @Test

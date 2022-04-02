@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-public class RestaurantsTests {
+class RestaurantsTests {
     private static final Restaurant RESTAURANT_1 = 
         new Restaurant("Restaurant 1", Category.FAST_FOOD, 1.10, 
             new LinkedList<RestaurantMenuItem>()
@@ -26,7 +26,7 @@ public class RestaurantsTests {
         new LinkedList<Restaurant>();
 
     @BeforeAll
-    public static void init() {
+    static void init() {
         // Add the discount items to the constant discount item list
         RESTAURANTS.addAll(
             Arrays.asList(RESTAURANT_1, RESTAURANT_2, RESTAURANT_3)

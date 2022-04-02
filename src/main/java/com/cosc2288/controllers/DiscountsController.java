@@ -15,6 +15,7 @@ import com.cosc2288.models.Discounts;
 import java.io.BufferedReader;
 import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 
 /** Controller to manage the behaviour of the Discounts model. */
 public class DiscountsController {
@@ -33,7 +34,7 @@ public class DiscountsController {
     }
 
     private void sortDiscounts() {
-        LinkedList<DiscountItem> discountItems = discounts.getDiscountItems();
+        List<DiscountItem> discountItems = discounts.getDiscountItems();
 
         // If we have discounts
         if (discounts.getDiscountItems() != null) {

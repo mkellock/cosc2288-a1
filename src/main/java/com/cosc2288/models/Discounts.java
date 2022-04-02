@@ -10,13 +10,13 @@ package com.cosc2288.models;
  * © 2022 Matthew Kellock
  */
 
-import java.util.LinkedList;
+import java.util.List;
 
 /**
  * The Discounts object is used in the collation and computation of discounts.
  */
 public class Discounts {
-    private LinkedList<DiscountItem> discountItems;
+    private List<DiscountItem> discountItems;
     private int deliveryDiscountRestaurantCount;
     private int deliveryDiscountRestaurantPercent;
 
@@ -24,7 +24,7 @@ public class Discounts {
      * Property to retrieve the discount items.
      * @return  Collection of discount items
      */
-    public LinkedList<DiscountItem> getDiscountItems() {
+    public List<DiscountItem> getDiscountItems() {
         return this.discountItems;
     }
 
@@ -32,7 +32,7 @@ public class Discounts {
      * Property to set the discount items.
      * @param discountItems Collection of discount items
      */
-    public void setDiscountItems(LinkedList<DiscountItem> discountItems) {
+    public void setDiscountItems(List<DiscountItem> discountItems) {
         this.discountItems = discountItems;
     }
 

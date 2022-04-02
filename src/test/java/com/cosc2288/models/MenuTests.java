@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
  */
 
 /** Series of Menu tests. */
-public class MenuTests {
+class MenuTests {
     private static final String MENU_TITLE = "Menu Title";
     private static final MenuItem ITEM_1 = new MenuItem("Item 1");
     private static final MenuItem ITEM_2 = new MenuItem("Item 2");
@@ -26,7 +26,7 @@ public class MenuTests {
         new LinkedList<MenuItem>();
 
     @BeforeAll
-    public static void init() {
+    static void init() {
         // Add the menu items to the constant menu item list
         MENU_ITEMS.addAll(Arrays.asList(ITEM_1, ITEM_2, ITEM_3));
     }

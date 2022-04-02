@@ -18,7 +18,7 @@ import org.junit.jupiter.api.Test;
  */
 
 /** Series of Restaurant tests. */
-public class RestaurantTests {
+class RestaurantTests {
     private static final String NAME = "Some Restaurant Name";
     private static final Category CATEGORY = Category.RESTAURANT;
     private static final Double DELIVERY_FEE = 5.50;
@@ -32,7 +32,7 @@ public class RestaurantTests {
         new LinkedList<RestaurantMenuItem>();
 
     @BeforeAll
-    public static void init() {
+    static void init() {
         // Add the menu items to the constant restaurant menu items
         MENU_ITEMS.addAll(Arrays.asList(ITEM1, ITEM2, ITEM3));
     }

@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
  */
 
 /** Series of InvalidCommandLineArg tests. */
-public class InvalidCommandLineArgTests {
+class InvalidCommandLineArgTests {
 
     @Test
     void shouldCreateExceptionAndReturnDescription() {

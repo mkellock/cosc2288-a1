@@ -26,7 +26,7 @@ import org.junit.jupiter.api.Test;
  */
 
 /** Series of DiscountsController tests. */
-public class DiscountsControllerTests {
+class DiscountsControllerTests {
 
     private static final DiscountItem ITEM_1 = new DiscountItem(0, 20, 5);
     private static final DiscountItem ITEM_2 = new DiscountItem(20, 40, 10);

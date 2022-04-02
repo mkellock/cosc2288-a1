@@ -10,12 +10,12 @@ package com.cosc2288.models;
  * © 2022 Matthew Kellock
  */
 
-import java.util.LinkedList;
+import java.util.List;
 
 /** Restaurant object is used in the construction of Returants and their
  * functions. */
 public class Restaurant {
-    private final LinkedList<RestaurantMenuItem> restaurantMenuItems;
+    private final List<RestaurantMenuItem> restaurantMenuItems;
     private final String name;
     private final Category category;
     private final Double deliveryFee;
@@ -38,7 +38,7 @@ public class Restaurant {
      * @param restaurantMenuItems    The restaurant's menu offerings
      */
     public Restaurant(String name, Category category, Double deliveryFee,
-        LinkedList<RestaurantMenuItem> restaurantMenuItems) {
+        List<RestaurantMenuItem> restaurantMenuItems) {
         this.name = name;
         this.category = category;
         this.deliveryFee = deliveryFee;
@@ -73,7 +73,7 @@ public class Restaurant {
      * Property to return the restaurant's menu items.
      * @return  The restaurant's menu items.
      */
-    public LinkedList<RestaurantMenuItem> getRestaurantMenuItems() {
+    public List<RestaurantMenuItem> getRestaurantMenuItems() {
         return restaurantMenuItems;
     }
 }

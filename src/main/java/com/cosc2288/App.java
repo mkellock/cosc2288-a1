@@ -23,7 +23,6 @@ import com.cosc2288.models.Restaurants;
 import com.cosc2288.views.MenuView;
 import com.cosc2288.views.RestaurantMenuView;
 import java.io.BufferedReader;
-import java.io.Console;
 import java.io.File;
 import java.io.FileReader;
 import java.util.LinkedList;
@@ -53,8 +52,7 @@ public final class App {
      *
      * @param args The arguments of the program.
      */
-    public static void main(String[] args)
-        throws java.io.FileNotFoundException, java.io.IOException {
+    public static void main(String[] args) throws java.io.IOException {
         Boolean leaveApp = false;
         
         // Print the title
@@ -98,10 +96,10 @@ public final class App {
             new Menu("Select by category", restaurantCategories);
 
         // Loop showing the menu infinately
-        while (!leaveApp) {
-            System.out.print(MenuView.DisplayMenu(mainMenu, BORDER));
+        while (Boolean.FALSE.equals(leaveApp)) {
+            System.out.print(MenuView.displayMenu(mainMenu, BORDER));
             Integer selection =
-                MenuView.MenuSelection(
+                MenuView.menuSelection(
                     scanner,
                     mainMenu.getMenuItems().size()
                 );
@@ -115,7 +113,7 @@ public final class App {
                     if (selection == 1) {
                         // Display the restaurant categories
                         System.out.print(
-                            MenuView.DisplayMenu(
+                            MenuView.displayMenu(
                                 restaurantCategoriesMenu,
                                 BORDER
                             )
@@ -123,7 +121,7 @@ public final class App {
 
                         // Retrieve the category selection
                         Integer categorySelection =
-                            MenuView.MenuSelection(
+                            MenuView.menuSelection(
                                 scanner,
                                 Category.values().length + 1
                             );
@@ -135,7 +133,7 @@ public final class App {
 
                             // Retrieve the restaurant selection
                             restaurantSelection =
-                                RestaurantMenuView.RestaurantSelection(
+                                RestaurantMenuView.restaurantSelection(
                                     scanner,
                                     restaurants,
                                     category,
@@ -146,7 +144,7 @@ public final class App {
                         }
                     } else { // If we're searching by text input
                         restaurantSelection =
-                            RestaurantMenuView.RestaurantSearch(
+                            RestaurantMenuView.restaurantSearch(
                                 scanner,
                                 restaurants,
                                 BORDER
@@ -188,7 +186,7 @@ public final class App {
         // Loop through the command line arguements
         for (int i = 0; i < args.length; i++) {
             // If we're not grabbing a command line value
-            if (!settingArg) {
+            if (Boolean.FALSE.equals(settingArg)) {
                 switch (args[i]) {
                     case "--help": // Help command
                     case "-h":

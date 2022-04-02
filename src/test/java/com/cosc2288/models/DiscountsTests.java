@@ -18,7 +18,7 @@ import org.junit.jupiter.api.Test;
  */
 
 /** Series of Discounts tests. */
-public class DiscountsTests {
+class DiscountsTests {
     private static final DiscountItem ITEM_1 = new DiscountItem(0, 20, 5);
     private static final DiscountItem ITEM_2 = new DiscountItem(20, 40, 10);
     private static final DiscountItem ITEM_3 = new DiscountItem(40, 60, 15);
@@ -29,7 +29,7 @@ public class DiscountsTests {
     private static final int DELIVERY_DISCOUNT_RESTAURANT_PERCENTAGE = 50;
 
     @BeforeAll
-    public static void init() {
+    static void init() {
         // Add the discount items to the constant discount item list
         DISCOUNT_ITEMS.addAll(Arrays.asList(ITEM_1, ITEM_2, ITEM_3, ITEM_4));
     }

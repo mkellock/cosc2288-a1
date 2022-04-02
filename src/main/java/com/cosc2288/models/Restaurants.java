@@ -10,19 +10,19 @@ package com.cosc2288.models;
  * © 2022 Matthew Kellock
  */
 
-import java.util.LinkedList;
+import java.util.List;
 
 /**
  * The Restaurants object is used in maintaining a collection of restaurants.
  */
 public class Restaurants {
-    private LinkedList<Restaurant> restaurantsList;
+    private List<Restaurant> restaurantsList;
 
     /**
      * Property to retrieve the restaurant items.
      * @return  Collection of restaurants
      */
-    public LinkedList<Restaurant> getRestaurants() {
+    public List<Restaurant> getRestaurants() {
         return this.restaurantsList;
     }
 
@@ -30,7 +30,7 @@ public class Restaurants {
      * Property to set the restaurant items.
      * @param restaurants Collection of restaurants
      */
-    public void setRestaurants(LinkedList<Restaurant> restaurants) {
+    public void setRestaurants(List<Restaurant> restaurants) {
         this.restaurantsList = restaurants;
     }
 }

@@ -15,14 +15,13 @@ import com.cosc2288.models.MenuItem;
 import com.cosc2288.models.Restaurant;
 import com.cosc2288.models.Restaurants;
 import com.cosc2288.models.Restaurant.Category;
-import com.cosc2288.views.MenuView;
 import java.util.LinkedList;
 import java.util.Scanner;
 
 public class RestaurantMenuView extends MenuView {
 
     public RestaurantMenuView() {
-        // Empty constructor
+        throw new IllegalStateException("Utility class");
     }
 
     /**
@@ -31,7 +30,7 @@ public class RestaurantMenuView extends MenuView {
      * @param border        The border used in constructing the menu
      * @return  Returns the constructed menu
      */
-    private static String ListRestaurants(LinkedList<Restaurant> restaurants,
+    private static String listRestaurants(LinkedList<Restaurant> restaurants,
         String border) {
         LinkedList<MenuItem> menuItems = new LinkedList<MenuItem>();
 
@@ -44,7 +43,7 @@ public class RestaurantMenuView extends MenuView {
         menuItems.add(new MenuItem("Go to main menu"));
 
         // Display a menu based off the restaurant items
-        return DisplayMenu(
+        return displayMenu(
             new Menu("Select from restaurant list", menuItems),
             border
         );
@@ -59,7 +58,7 @@ public class RestaurantMenuView extends MenuView {
      * @param border        The border used in constructing the menu
      * @return  Returns the validated restaurant selection
      */
-    public static Restaurant RestaurantSelection(Scanner scanner, 
+    public static Restaurant restaurantSelection(Scanner scanner, 
         Restaurants restaurants, Category category, String border) {
         LinkedList<Restaurant> filteredRestaurants =
             new LinkedList<Restaurant>();
@@ -72,11 +71,11 @@ public class RestaurantMenuView extends MenuView {
 
         // Display a menu based off the restaurant items
         System.out.print(
-            ListRestaurants(filteredRestaurants, border)
+            listRestaurants(filteredRestaurants, border)
         );
 
         return filteredRestaurants.get(
-            MenuSelection(scanner, filteredRestaurants.size()) - 1
+            menuSelection(scanner, filteredRestaurants.size()) - 1
         );
     }
 
@@ -88,7 +87,7 @@ public class RestaurantMenuView extends MenuView {
      * @param border        The border used in constructing the menu
      * @return  Returns the validated restaurant selection
      */
-    public static Restaurant RestaurantSearch(Scanner scanner, 
+    public static Restaurant restaurantSearch(Scanner scanner, 
         Restaurants restaurants, String border) {
             LinkedList<Restaurant> filteredRestaurants =
                 new LinkedList<Restaurant>();
@@ -113,11 +112,11 @@ public class RestaurantMenuView extends MenuView {
 
                     // Display a menu based off the restaurant items
                     System.out.print(
-                        ListRestaurants(filteredRestaurants, border)
+                        listRestaurants(filteredRestaurants, border)
                     );
 
                     return filteredRestaurants.get(
-                        MenuSelection(scanner, filteredRestaurants.size()) - 1
+                        menuSelection(scanner, filteredRestaurants.size()) - 1
                     );
                 }
 

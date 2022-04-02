@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
  */
 
 /** Series of FileConfig tests. */
-public class FileConfigTests {
+class FileConfigTests {
     private static final String DISCOUNTS_PATH = "/Some/Path/Discounts.csv";
     private static final String RESTAURANTS_PATH = "/Some/Path/Discounts.csv";
 

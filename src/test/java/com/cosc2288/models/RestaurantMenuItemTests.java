@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
  */
 
 /** Series of RestaurantMenuItem tests. */
-public class RestaurantMenuItemTests {
+class RestaurantMenuItemTests {
     private static final String DESCRIPTION = "Description 1";
     private static final double PRICE = 123.45;
 

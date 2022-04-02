@@ -30,7 +30,7 @@ import org.junit.jupiter.api.Test;
  */
 
 /** Series of DiscountsController tests. */
-public class RestaurantsControllerTests {
+class RestaurantsControllerTests {
 
     private static final RestaurantMenuItem ITEM_1_1 =
         new RestaurantMenuItem("Item 1-1", 1.00);
