@@ -23,6 +23,7 @@ import com.cosc2288.models.OrderItem;
 import com.cosc2288.models.Restaurant;
 import com.cosc2288.models.Restaurants;
 import com.cosc2288.views.MenuView;
+import com.cosc2288.views.CheckoutView;
 import com.cosc2288.views.RestaurantMenuItemView;
 import com.cosc2288.views.RestaurantMenuView;
 import java.io.BufferedReader;
@@ -173,7 +174,11 @@ public final class App {
 
                     break;
                 case 3:
-                    System.out.println(order.getOrderItems().size());
+                    // Print the checkout ticket
+                    System.out.print(
+                        CheckoutView.PrintCheckout(order, BORDER)
+                    );
+                    leaveApp = true;
                     break;
                 default:
                     // Exit the applicaton
