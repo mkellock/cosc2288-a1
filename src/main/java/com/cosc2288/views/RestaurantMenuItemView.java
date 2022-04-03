@@ -18,8 +18,13 @@ import com.cosc2288.models.RestaurantMenuItem;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+/* The view for the restaurant menu item */
 public class RestaurantMenuItemView {
 
+    /**
+     * Prevents instansiation of a static class
+     * @throws IllegalStateException
+     */
     private RestaurantMenuItemView() {
         throw new IllegalStateException("Utility class");
     }

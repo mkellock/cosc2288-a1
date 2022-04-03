@@ -19,6 +19,7 @@ import java.util.LinkedList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/* Methods to control resturants */
 public class RestaurantsController {
     private Restaurants restaurants;
 

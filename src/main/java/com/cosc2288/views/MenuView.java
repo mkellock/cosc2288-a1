@@ -14,6 +14,7 @@ import com.cosc2288.models.Menu;
 import com.cosc2288.models.MenuItem;
 import java.util.Scanner;
 
+/* The view for the user menu */
 public class MenuView {
 
     public static final String ANSI_RESET = "\u001B[0m";

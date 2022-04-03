@@ -19,13 +19,18 @@ public class Menu {
 
     /**
      * Initialises the menu with a collection of menu items
-     * @param menuItems
+     * @param menuTitle The title of the menu
+     * @param menuItems The items contained in the menu
      */
     public Menu(String menuTitle, List<MenuItem> menuItems) {
         this.menuTitle = menuTitle;
         this.menuItems = menuItems;
     }
 
+    /**
+     * Retrieves the menu title
+     * @return  The title of the menu
+     */
     public String getMenuTitle() {
         return menuTitle;
     }

@@ -45,15 +45,10 @@ public final class App {
     private static RestaurantsController restaurantsController =
         new RestaurantsController(restaurants);
     private static final Scanner scanner = new Scanner(System.in);
-    private static final Order order = new Order();
-
-    private App() {
-
-    }
+    private static final Order order = new Order(discounts);
 
     /**
      * The main Melbourne Eats app :)
-     *
      * @param args The arguments of the program.
      */
     public static void main(String[] args) throws java.io.IOException {

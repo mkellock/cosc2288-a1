@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+/** Series of RestaurantsTests tests. */
 class RestaurantsTests {
     private static final Restaurant RESTAURANT_1 = 
         new Restaurant("Restaurant 1", Category.FAST_FOOD, 1.10, 

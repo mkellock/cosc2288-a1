@@ -18,6 +18,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+/** Series of OrderItemTests tests. */
 class OrderItemTests {
     private static final String NAME = "Some Restaurant Name";
     private static final Category CATEGORY = Category.RESTAURANT;
