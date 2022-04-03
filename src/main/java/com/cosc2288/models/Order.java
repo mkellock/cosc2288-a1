@@ -13,8 +13,6 @@ package com.cosc2288.models;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.tools.ForwardingFileObject;
-
 /* The model for a order */
 public class Order {
     private List<OrderItem> orderItems;
