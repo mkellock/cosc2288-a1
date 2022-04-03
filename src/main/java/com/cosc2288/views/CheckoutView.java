@@ -61,28 +61,36 @@ public class CheckoutView {
         // Add the order price
         returnVal.append(
             String.format(TOTAL_FORMAT,
-                "Order price:", String.format(CURRENCY_FORMAT, order.orderPrice())
+                "Order price:", String.format(
+                    CURRENCY_FORMAT,
+                    order.orderPrice())
             )
         );
 
         // Add the delivery fee
         returnVal.append(
             String.format(TOTAL_FORMAT,
-                "Delivery fee:", String.format(CURRENCY_FORMAT, order.deliveryFee())
+                "Delivery fee:", String.format(
+                    CURRENCY_FORMAT,
+                    order.deliveryFee())
             )
         );
 
         // Add the savings
         returnVal.append(
             String.format(TOTAL_FORMAT,
-                "You have saved:", String.format(CURRENCY_FORMAT, order.savings())
+                "You have saved:", String.format(
+                    CURRENCY_FORMAT,
+                    order.savings())
             )
         );
 
         // Add the total
         returnVal.append(
             String.format(TOTAL_FORMAT,
-                "Total amount to pay:", String.format(CURRENCY_FORMAT, order.total())
+                "Total amount to pay:", String.format(
+                    CURRENCY_FORMAT,
+                    order.total())
             )
         );
 
