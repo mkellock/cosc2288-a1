@@ -23,8 +23,10 @@ public class CheckoutView {
         throw new IllegalStateException("Utility class");
     }
 
-    public static String PrintCheckout(Order order, String border) {
+    public static String printCheckout(Order order, String border) {
         StringBuilder returnVal = new StringBuilder();
+        final String TOTAL_FORMAT = "%-35s %10s%n";
+        final String CURRENCY_FORMAT = "$%.2f";
 
         // Add the title
         returnVal.append(border);
@@ -41,10 +43,10 @@ public class CheckoutView {
                 if (orderItem.getRestaurant() == restaurant) {
                     // Output the order item
                     returnVal.append(
-                        String.format("%2s %-32s %10s\n",
+                        String.format("%2s %-32s %10s%n",
                             orderItem.getQuantity(),
                             orderItem.getRestaurantMenuItem().getDescription(),
-                            String.format("$%.2f", 
+                            String.format(CURRENCY_FORMAT, 
                                 orderItem.getQuantity() * 
                                 orderItem.getRestaurantMenuItem().getPrice()
                             )
@@ -58,29 +60,29 @@ public class CheckoutView {
 
         // Add the order price
         returnVal.append(
-            String.format("%-35s %10s\n",
-                "Order price:", String.format("$%.2f", order.orderPrice())
+            String.format(TOTAL_FORMAT,
+                "Order price:", String.format(CURRENCY_FORMAT, order.orderPrice())
             )
         );
 
         // Add the delivery fee
         returnVal.append(
-            String.format("%-35s %10s\n",
-                "Delivery fee:", String.format("$%.2f", order.deliveryFee())
+            String.format(TOTAL_FORMAT,
+                "Delivery fee:", String.format(CURRENCY_FORMAT, order.deliveryFee())
             )
         );
 
         // Add the savings
         returnVal.append(
-            String.format("%-35s %10s\n",
-                "You have saved:", String.format("$%.2f", order.savings())
+            String.format(TOTAL_FORMAT,
+                "You have saved:", String.format(CURRENCY_FORMAT, order.savings())
             )
         );
 
         // Add the total
         returnVal.append(
-            String.format("%-35s %10s\n",
-                "Total amount to pay:", String.format("$%.2f", order.total())
+            String.format(TOTAL_FORMAT,
+                "Total amount to pay:", String.format(CURRENCY_FORMAT, order.total())
             )
         );
 

@@ -176,7 +176,7 @@ public final class App {
                 case 3:
                     // Print the checkout ticket
                     System.out.print(
-                        CheckoutView.PrintCheckout(order, BORDER)
+                        CheckoutView.printCheckout(order, BORDER)
                     );
                     leaveApp = true;
                     break;
