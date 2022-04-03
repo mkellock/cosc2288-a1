@@ -32,7 +32,7 @@ mvn compile
 
 ```bash
 # Execute the application
-mvn exec:java -Dexec.mainClass=com.cosc2288.App -Dexec.args="-d /Users/mattkellock/git/cosc2288-1/Discounts.csv -r /Users/mattkellock/git/cosc2288-1/Restaurants-2022.txt"
+mvn exec:java -Dexec.mainClass=com.cosc2288.App -Dexec.args="-d /[Path to file]/Discounts.txt -r /[Path to file]/Restaurants-2022.txt"
 ```
 
 ## Contributing
