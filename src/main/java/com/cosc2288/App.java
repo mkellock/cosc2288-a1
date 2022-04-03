@@ -107,77 +107,10 @@ public final class App {
             switch (selection) {
                 case 1:
                 case 2:
-                    Restaurant restaurantSelection = null;
-
-                    // If we're searching by category
-                    if (selection == 1) {
-                        // Display the restaurant categories
-                        System.out.print(
-                            MenuView.displayMenu(
-                                restaurantCategoriesMenu,
-                                BORDER
-                            )
-                        );
-
-                        // Retrieve the category selection
-                        Integer categorySelection =
-                            MenuView.menuSelection(
-                                scanner,
-                                Category.values().length + 1
-                            );
-
-                        // Transpose the category selection into a category
-                        if (categorySelection <= Category.values().length) {
-                            Category category;
-                            category = Category.values()[categorySelection - 1];
-
-                            // Retrieve the restaurant selection
-                            restaurantSelection =
-                                RestaurantMenuView.restaurantSelection(
-                                    scanner,
-                                    restaurants,
-                                    category,
-                                    BORDER
-                            );
-                        }
-                    } else { // If we're searching by text input
-                        restaurantSelection =
-                            RestaurantMenuView.restaurantSearch(
-                                scanner,
-                                restaurants,
-                                BORDER
-                        );
-                    }
-
-                    // If we have selected a restaurant
-                    if (restaurantSelection != null) {
-                        OrderItem orderItem;
-
-                        // Keep prompting for order items until the user exits
-                        do {
-                            // Prompt for an order item
-                            orderItem = 
-                                RestaurantMenuItemView.
-                                    restaurantMenuItemSelection(
-                                        scanner,
-                                        restaurantSelection,
-                                        BORDER
-                                    );
-                            
-                            // If the user has selected an order item
-                            if (orderItem != null) {  
-                                // Add the order item
-                                order.addOrderItem(orderItem);
-                            }
-                        } while (orderItem != null);
-                    }
-
+                    menuItemSelection(selection);
                     break;
                 case 3:
-                    // Print the checkout ticket
-                    System.out.print(
-                        CheckoutView.printCheckout(order, BORDER)
-                    );
+                    checkout();
                     leaveApp = true;
                     break;
                 default:
@@ -185,6 +118,80 @@ public final class App {
                     leaveApp = true;
             }
         }
+    }
+
+    private static void menuItemSelection(int selection){
+        Restaurant restaurantSelection = null;
+
+        // If we're searching by category
+        if (selection == 1) {
+            // Display the restaurant categories
+            System.out.print(
+                MenuView.displayMenu(
+                    restaurantCategoriesMenu,
+                    BORDER
+                )
+            );
+
+            // Retrieve the category selection
+            Integer categorySelection =
+                MenuView.menuSelection(
+                    scanner,
+                    Category.values().length + 1
+                );
+
+            // Transpose the category selection into a category
+            if (categorySelection <= Category.values().length) {
+                Category category;
+                category = Category.values()[categorySelection - 1];
+
+                // Retrieve the restaurant selection
+                restaurantSelection =
+                    RestaurantMenuView.restaurantSelection(
+                        scanner,
+                        restaurants,
+                        category,
+                        BORDER
+                );
+            }
+        } else { // If we're searching by text input
+            restaurantSelection =
+                RestaurantMenuView.restaurantSearch(
+                    scanner,
+                    restaurants,
+                    BORDER
+            );
+        }
+
+        // If we have selected a restaurant
+        if (restaurantSelection != null) {
+            OrderItem orderItem;
+
+            // Keep prompting for order items until the user exits
+            do {
+                // Prompt for an order item
+                orderItem = 
+                    RestaurantMenuItemView.
+                        restaurantMenuItemSelection(
+                            scanner,
+                            restaurantSelection,
+                            BORDER
+                        );
+                
+                // If the user has selected an order item
+                if (orderItem != null) {  
+                    // Add the order item
+                    order.addOrderItem(orderItem);
+                }
+            } while (orderItem != null);
+        }
+    }
+
+    private static void checkout() {
+        // Print the checkout ticket
+        System.out.print(
+            CheckoutView.printCheckout(order, BORDER)
+        );
     }
 
     private static String loadCommandLineArgs(String[] args)
